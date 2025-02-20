@@ -1,0 +1,15 @@
+// Styles for markdown content
+.just-markdown {
+  table {
+    width: 100%; // Ensure tables take full width
+  }
+
+  .sbdocs-preview {
+    display: none !important; // Hide Storybook docs preview
+  }
+}
+
+// Apply markdown styles to a specific anchor
+div[id*="--css-variables"] {
+  @extend .just-markdown;
+}
