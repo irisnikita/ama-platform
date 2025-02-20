@@ -1,0 +1,63 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --am-background: 0 0% 100%;
+    --am-foreground: 0 0% 3.9%;
+    --am-card: 0 0% 100%;
+    --am-card-foreground: 0 0% 3.9%;
+    --am-popover: 0 0% 100%;
+    --am-popover-foreground: 0 0% 3.9%;
+    --am-primary: 0 0% 9%;
+    --am-primary-foreground: 0 0% 98%;
+    --am-secondary: 0 0% 96.1%;
+    --am-secondary-foreground: 0 0% 9%;
+    --am-muted: 0 0% 96.1%;
+    --am-muted-foreground: 0 0% 45.1%;
+    --am-accent: 0 0% 96.1%;
+    --am-accent-foreground: 0 0% 9%;
+    --am-destructive: 0 84.2% 60.2%;
+    --am-destructive-foreground: 0 0% 98%;
+    --am-border: 0 0% 89.8%;
+    --am-input: 0 0% 89.8%;
+    --am-ring: 0 0% 3.9%;
+    --am-chart-1: 12 76% 61%;
+    --am-chart-2: 173 58% 39%;
+    --am-chart-3: 197 37% 24%;
+    --am-chart-4: 43 74% 66%;
+    --am-chart-5: 27 87% 67%;
+    --am-radius: 0.5rem;
+  }
+  .dark {
+    --am-background: 0 0% 3.9%;
+    --am-foreground: 0 0% 98%;
+    --am-card: 0 0% 3.9%;
+    --am-card-foreground: 0 0% 98%;
+    --am-popover: 0 0% 3.9%;
+    --am-popover-foreground: 0 0% 98%;
+    --am-primary: 0 0% 98%;
+    --am-primary-foreground: 0 0% 9%;
+    --am-secondary: 0 0% 14.9%;
+    --am-secondary-foreground: 0 0% 98%;
+    --am-muted: 0 0% 14.9%;
+    --am-muted-foreground: 0 0% 63.9%;
+    --am-accent: 0 0% 14.9%;
+    --am-accent-foreground: 0 0% 98%;
+    --am-destructive: 0 62.8% 30.6%;
+    --am-destructive-foreground: 0 0% 98%;
+    --am-border: 0 0% 14.9%;
+    --am-input: 0 0% 14.9%;
+    --am-ring: 0 0% 83.1%;
+    --am-chart-1: 220 70% 50%;
+    --am-chart-2: 160 60% 45%;
+    --am-chart-3: 30 80% 55%;
+    --am-chart-4: 280 65% 60%;
+    --am-chart-5: 340 75% 55%;
+  }
+}
+@layer base {
+}
