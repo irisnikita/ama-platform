@@ -3,7 +3,7 @@ import {
   type SpaceProps as AntdSpaceProps,
 } from "antd-mobile";
 
-interface SpaceProps extends AntdSpaceProps {
+export interface SpaceProps extends AntdSpaceProps {
   /** An optional prop */
   optional?: string;
 }

@@ -10,10 +10,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "vite.config.ts",
-    "**/stories/**",
-    "src/**/*.stories.ts"
-  ]
+  "exclude": ["node_modules", "vite.config.ts", "**/stories/**"]
 }

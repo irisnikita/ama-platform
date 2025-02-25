@@ -3,7 +3,7 @@ import {
   type FloatingPanelProps as AntdFloatingPanelProps,
 } from "antd-mobile";
 
-interface FloatingPanelProps extends AntdFloatingPanelProps {
+export interface FloatingPanelProps extends AntdFloatingPanelProps {
   /** An optional prop */
   optional?: string;
 }

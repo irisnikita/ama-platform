@@ -1,6 +1,6 @@
 import { Card as AntdCard, type CardProps as AntdCardProps } from "antd-mobile";
 
-interface CardProps extends AntdCardProps {
+export interface CardProps extends AntdCardProps {
   /** An optional prop */
   optional?: string;
 }

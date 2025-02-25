@@ -4,7 +4,7 @@ import {
   type TabBarProps as AntdTabBarProps,
 } from "antd-mobile";
 
-interface TabBarProps extends AntdTabBarProps {
+export interface TabBarProps extends AntdTabBarProps {
   /** Optional */
   optional?: boolean;
 }

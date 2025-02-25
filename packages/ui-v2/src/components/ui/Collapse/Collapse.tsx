@@ -4,7 +4,7 @@ import {
   type CollapseProps as AntdCollapseProps,
 } from "antd-mobile";
 
-type CollapseProps = AntdCollapseProps & {
+export type CollapseProps = AntdCollapseProps & {
   /** Optional */
   optional?: boolean;
 };

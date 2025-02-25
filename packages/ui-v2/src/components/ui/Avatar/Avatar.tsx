@@ -3,7 +3,7 @@ import {
   type AvatarProps as AntdAvatarProps,
 } from "antd-mobile";
 
-interface AvatarProps extends AntdAvatarProps {
+export interface AvatarProps extends AntdAvatarProps {
   /** An optional prop */
   optional?: string;
 }

@@ -3,7 +3,7 @@ import {
   type EllipsisProps as AntdEllipsisProps,
 } from "antd-mobile";
 
-interface EllipsisProps extends AntdEllipsisProps {
+export interface EllipsisProps extends AntdEllipsisProps {
   /** An optional prop */
   optional?: string;
 }

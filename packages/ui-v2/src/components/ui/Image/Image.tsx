@@ -3,7 +3,7 @@ import {
   type ImageProps as AntdImageProps,
 } from "antd-mobile";
 
-interface ImageProps extends AntdImageProps {
+export interface ImageProps extends AntdImageProps {
   /** An optional prop */
   optional?: string;
 }

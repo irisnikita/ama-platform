@@ -3,7 +3,7 @@ import {
   type ImageViewerProps as AntdImageViewerProps,
 } from "antd-mobile";
 
-interface ImageViewerProps extends AntdImageViewerProps {
+export interface ImageViewerProps extends AntdImageViewerProps {
   /** An optional prop */
   optional?: string;
 }

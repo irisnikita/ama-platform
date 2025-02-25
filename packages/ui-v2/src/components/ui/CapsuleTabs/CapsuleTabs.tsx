@@ -5,7 +5,7 @@ import {
 } from "antd-mobile";
 import React from "react";
 
-interface CapsuleTabsProps extends AntdCapsuleTabsProps {}
+export interface CapsuleTabsProps extends AntdCapsuleTabsProps {}
 
 const BaseCapsuleTabs: React.FC<CapsuleTabsProps> = (props) => {
   return <AntdCapsuleTabs {...props} />;

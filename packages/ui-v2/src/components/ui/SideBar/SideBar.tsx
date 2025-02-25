@@ -4,7 +4,7 @@ import {
   type SideBarProps as AntdSideBarProps,
 } from "antd-mobile";
 
-interface SideBarProps extends AntdSideBarProps {
+export interface SideBarProps extends AntdSideBarProps {
   /** Optional */
   optional?: boolean;
 }

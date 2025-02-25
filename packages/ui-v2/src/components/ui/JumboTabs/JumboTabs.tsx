@@ -4,7 +4,7 @@ import {
   type JumboTabsProps as AntdJumboTabsProps,
 } from "antd-mobile";
 
-interface JumboTabsProps extends AntdJumboTabsProps {
+export interface JumboTabsProps extends AntdJumboTabsProps {
   /** Optional */
   optional?: boolean;
 }

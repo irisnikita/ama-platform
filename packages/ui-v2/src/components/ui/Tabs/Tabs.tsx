@@ -1,7 +1,7 @@
 // Libraries
 import { Tabs as AntdTabs, type TabsProps as AntdTabsProps } from "antd-mobile";
 
-interface TabsProps extends AntdTabsProps {
+export interface TabsProps extends AntdTabsProps {
   /** Optional */
   optional?: boolean;
 }

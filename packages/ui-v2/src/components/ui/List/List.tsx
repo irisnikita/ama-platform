@@ -1,7 +1,7 @@
 // Libraries
 import { List as AntdList, type ListProps as AntdListProps } from "antd-mobile";
 
-interface ListProps extends AntdListProps {
+export interface ListProps extends AntdListProps {
   /** Optional */
   optional?: boolean;
 }

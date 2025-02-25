@@ -20,6 +20,7 @@ export default defineConfig({
       tsconfigPath: "tsconfig.app.json",
       exclude: [
         "**/*.stories.tsx",
+        "**/*.stories.ts",
         "**/*.test.tsx",
         "**/__tests__/**",
         "**/__mocks__/**",
