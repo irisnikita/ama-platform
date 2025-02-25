@@ -19,7 +19,7 @@ import {
   Button as AntdButton,
   type ButtonProps as AntdButtonProps,
 } from "antd-mobile";
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 
 export interface ButtonProps extends AntdButtonProps {
   /** An optional icon */
@@ -32,13 +32,15 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const { children, icon, iconPosition = "left", ...restOfProps } = props;
 
   const renderButtonContent = useCallback(() => {
-    const nodeItems: React.ReactNode[] = [<span>{children}</span>];
+    const nodeItems: React.ReactNode[] = [
+      <span key="button-content">{children}</span>,
+    ];
 
     if (icon) {
       if (iconPosition === "left") {
-        nodeItems.unshift(icon);
+        nodeItems.unshift(<span key="button-icon">{icon}</span>);
       } else {
-        nodeItems.push(icon);
+        nodeItems.push(<span key="button-icon">{icon}</span>);
       }
     }
 
@@ -47,7 +49,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <AntdButton {...restOfProps}>
-      <div className="am-flex am-items-center am-gap-2">
+      <div className="am-flex am-items-center am-justify-center am-gap-2">
         {renderButtonContent()}
       </div>
     </AntdButton>
