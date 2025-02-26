@@ -5,7 +5,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { PullToRefresh } from "./PullToRefresh";
 
 const meta: Meta<typeof PullToRefresh> = {
-  title: "Components/Loading/PullToRefresh",
+  title: "Components/PullToRefresh",
   component: PullToRefresh,
   parameters: {
     docs: {
