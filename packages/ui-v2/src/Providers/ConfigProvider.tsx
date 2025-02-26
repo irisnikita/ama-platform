@@ -17,6 +17,13 @@ const locale = {
     ...viVN.common,
     confirm: "Xác nhận",
   },
+  ErrorBlock: {
+    ...viVN.ErrorBlock,
+    empty: {
+      title: "Không có dữ liệu",
+      description: "Hiện tại không có dữ liệu, xin vui lòng thử lại sau.",
+    },
+  },
 };
 
 export const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {

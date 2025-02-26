@@ -23,3 +23,5 @@ export * from "./SideBar";
 export * from "./TabBar";
 export * from "./Tabs";
 export * from "./Toast";
+export * from "./ErrorBlock";
+export * from "./Swiper";
