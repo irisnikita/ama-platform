@@ -30,3 +30,4 @@ export * from "./ActionSheet";
 export * from "./PullToRefresh";
 export * from "./ActionSheet";
 export * from "./Loading";
+export * from "./Segmented";
