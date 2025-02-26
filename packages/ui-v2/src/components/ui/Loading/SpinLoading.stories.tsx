@@ -2,17 +2,22 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 // Components
-import { DotLoading } from "./DotLoading";
+import { SpinLoading } from "./SpinLoading";
 
-const meta: Meta<typeof DotLoading> = {
-  title: "Components/Loading/DotLoading",
-  component: DotLoading,
+const meta: Meta<typeof SpinLoading> = {
+  title: "Components/Loading/SpinLoading",
+  component: SpinLoading,
   parameters: {
     docs: {
       description: {
         component: `
 A component that can be used to display a loading indicator.`,
       },
+    },
+  },
+  argTypes: {
+    color: {
+      control: { type: "color" },
     },
   },
   args: {
@@ -25,12 +30,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {},
-  render: (args) => <DotLoading {...args} />,
+  render: (args) => <SpinLoading {...args} />,
 };
 
 export const CustomColor: Story = {
   args: {
-    color: "default",
+    color: "blue",
   },
-  render: (args) => <DotLoading {...args} />,
+  render: (args) => <SpinLoading color={args.color} />,
 };
