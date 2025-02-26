@@ -1,6 +1,6 @@
 {
   "name": "@antscorp/ama-ui",
-  "version": "0.0.20",
+  "version": "0.0.22",
   "main": "dist/ama-ui.es.js",
   "module": "dist/ama-ui.es.js",
   "types": "dist/index.d.ts",
