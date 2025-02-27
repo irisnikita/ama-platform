@@ -6,6 +6,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { InfiniteScroll } from "./InfiniteScroll";
 import { useState } from "react";
 import { List } from "../List";
+import { DotLoading } from "../Loading";
 
 // Utils
 import { sleep } from "antd-mobile/es/utils/sleep";
@@ -26,12 +27,6 @@ A component that can be used to display content that can be scrolled infinitely.
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  args: {},
-};
-
-let count = 0;
 
 async function mockRequest() {
   if (count >= 5) {
@@ -60,7 +55,9 @@ async function mockRequest() {
   ];
 }
 
-export const WithContent: Story = {
+let count = 0;
+
+export const Default: Story = {
   args: {},
   render: (args) => {
     const [data, setData] = useState<string[]>([]);
@@ -79,6 +76,47 @@ export const WithContent: Story = {
           ))}
         </List>
         <InfiniteScroll {...args} loadMore={loadMore} hasMore={hasMore} />
+      </>
+    );
+  },
+};
+
+export const CustomContent: Story = {
+  args: {},
+  render: (args) => {
+    const [data, setData] = useState<string[]>([]);
+    const [hasMore, setHasMore] = useState(true);
+    async function loadMore() {
+      const append = await mockRequest();
+      setData((val) => [...val, ...append]);
+      setHasMore(append.length > 0);
+    }
+
+    const InfiniteScrollContent = ({ hasMore }: { hasMore?: boolean }) => {
+      return (
+        <>
+          {hasMore ? (
+            <>
+              <span>Loading</span>
+              <DotLoading />
+            </>
+          ) : (
+            <span>--- End of list ---</span>
+          )}
+        </>
+      );
+    };
+
+    return (
+      <>
+        <List>
+          {data.map((item, index) => (
+            <List.Item key={index}>{item}</List.Item>
+          ))}
+        </List>
+        <InfiniteScroll {...args} loadMore={loadMore} hasMore={hasMore}>
+          <InfiniteScrollContent hasMore={hasMore} />
+        </InfiniteScroll>
       </>
     );
   },

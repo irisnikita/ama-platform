@@ -75,9 +75,86 @@ export const WithCancelButtonAndDescription: Story = {
   },
 };
 
-export const Imperative: Story = {
+export const WithCustomActions: Story = {
   args: {},
   render: (args) => {
+    const actions: Action[] = [
+      { text: "Copy", key: "copy" },
+      { text: "Edit", key: "edit", disabled: true },
+      {
+        text: "Delete",
+        key: "delete",
+        description: "Delete permanently",
+        danger: true,
+        bold: true,
+      },
+    ];
+
+    const [visible, setVisible] = useState(false);
+    return (
+      <>
+        <Button onClick={() => setVisible(true)}>
+          List with custom actions
+        </Button>
+        <ActionSheet
+          {...args}
+          extra="Extra description"
+          cancelText="Cancel"
+          visible={visible}
+          actions={actions}
+          onClose={() => setVisible(false)}
+        />
+      </>
+    );
+  },
+};
+
+export const WithCustomEvents: Story = {
+  args: {},
+  render: (args) => {
+    const actions: Action[] = [
+      { text: "Copy", key: "copy" },
+      { text: "Edit", key: "edit" },
+      {
+        text: "Save",
+        key: "save",
+        // onClick: async () => {
+        //   const result = await Dialog.confirm({ content: '确定要保存吗？' })
+        //   if (result) {
+        //     Toast.show('执行了保存操作')
+        //   }
+        // },
+      },
+    ];
+
+    const [visible, setVisible] = useState(false);
+    return (
+      <>
+        <Button onClick={() => setVisible(true)}>
+          List with custom events
+        </Button>
+        <ActionSheet
+          {...args}
+          visible={visible}
+          actions={actions}
+          onClose={() => setVisible(false)}
+          onAction={(action) => {
+            if (action.key === "edit" || action.key === "copy") {
+              Toast.show(`You have selected ${action.text}`);
+            }
+          }}
+          afterClose={() => {
+            Toast.show("Action sheet closed");
+          }}
+        />
+      </>
+    );
+  },
+};
+
+export const Imperative: Story = {
+  args: {},
+  render: () => {
     const handler = useRef<ActionSheetShowHandler>();
     const actions: Action[] = [
       {

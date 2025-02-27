@@ -32,3 +32,6 @@ export * from "./PullToRefresh";
 export * from "./ActionSheet";
 export * from "./Loading";
 export * from "./Segmented";
+export * from "./Steps";
+export * from "./PageIndicator";
+export * from "./Tag";
