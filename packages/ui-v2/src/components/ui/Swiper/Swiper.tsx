@@ -1,4 +1,5 @@
 // Libraries
+import React from "react";
 import {
   Swiper as AntdSwiper,
   type SwiperProps as AntdSwiperProps,

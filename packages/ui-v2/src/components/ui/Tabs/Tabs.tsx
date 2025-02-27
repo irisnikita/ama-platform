@@ -1,5 +1,6 @@
 // Libraries
 import { Tabs as AntdTabs, type TabsProps as AntdTabsProps } from "antd-mobile";
+import React from "react";
 
 export interface TabsProps extends AntdTabsProps {
   /** Optional */

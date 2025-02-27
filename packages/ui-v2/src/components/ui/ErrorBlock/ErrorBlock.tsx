@@ -4,7 +4,7 @@ import {
   type ErrorBlockProps as AntdErrorBlockProps,
 } from "antd-mobile";
 import { InboxIcon } from "lucide-react";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 
 export interface ErrorBlockProps extends AntdErrorBlockProps {
   /** An optional prop */

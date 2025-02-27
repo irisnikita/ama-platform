@@ -1,5 +1,6 @@
 // Libraries
 import { List as AntdList, type ListProps as AntdListProps } from "antd-mobile";
+import React from "react";
 
 export interface ListProps extends AntdListProps {
   /** Optional */

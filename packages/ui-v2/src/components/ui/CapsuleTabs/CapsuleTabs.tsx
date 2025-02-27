@@ -1,9 +1,9 @@
 // Libraries
+import React from "react";
 import {
   CapsuleTabs as AntdCapsuleTabs,
   CapsuleTabsProps as AntdCapsuleTabsProps,
 } from "antd-mobile";
-import React from "react";
 
 export interface CapsuleTabsProps extends AntdCapsuleTabsProps {}
 

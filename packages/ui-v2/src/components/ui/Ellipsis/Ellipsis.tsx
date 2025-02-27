@@ -2,6 +2,7 @@ import {
   Ellipsis as AntdEllipsis,
   type EllipsisProps as AntdEllipsisProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface EllipsisProps extends AntdEllipsisProps {
   /** An optional prop */

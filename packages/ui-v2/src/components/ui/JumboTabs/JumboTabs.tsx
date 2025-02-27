@@ -3,6 +3,7 @@ import {
   JumboTabs as AntdJumboTabs,
   type JumboTabsProps as AntdJumboTabsProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface JumboTabsProps extends AntdJumboTabsProps {
   /** Optional */

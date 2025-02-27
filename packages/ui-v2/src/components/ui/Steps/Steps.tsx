@@ -3,6 +3,7 @@ import {
   Steps as AntdSteps,
   type StepsProps as AntdStepsProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface StepsProps extends AntdStepsProps {
   /** Optional */

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Avatar as AntdAvatar,
   type AvatarProps as AntdAvatarProps,
