@@ -3,6 +3,7 @@ import {
   Collapse as AntdCollapse,
   type CollapseProps as AntdCollapseProps,
 } from "antd-mobile";
+import React from "react";
 
 export type CollapseProps = AntdCollapseProps & {
   /** Optional */

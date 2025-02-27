@@ -2,6 +2,7 @@ import {
   ImageViewer as AntdImageViewer,
   type ImageViewerProps as AntdImageViewerProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface ImageViewerProps extends AntdImageViewerProps {
   /** An optional prop */

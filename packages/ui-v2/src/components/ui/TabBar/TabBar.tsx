@@ -3,6 +3,7 @@ import {
   TabBar as AntdTabBar,
   type TabBarProps as AntdTabBarProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface TabBarProps extends AntdTabBarProps {
   /** Optional */

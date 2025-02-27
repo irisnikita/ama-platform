@@ -2,6 +2,7 @@ import {
   Picker as AntdPicker,
   PickerProps as AntdPickerProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface PickerProps extends AntdPickerProps {}
 

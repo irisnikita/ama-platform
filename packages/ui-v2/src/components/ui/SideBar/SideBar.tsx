@@ -3,6 +3,7 @@ import {
   SideBar as AntdSideBar,
   type SideBarProps as AntdSideBarProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface SideBarProps extends AntdSideBarProps {
   /** Optional */

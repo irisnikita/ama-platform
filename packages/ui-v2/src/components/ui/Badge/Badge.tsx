@@ -1,8 +1,8 @@
+import React from "react";
 import {
   Badge as AntdBadge,
   type BadgeProps as AntdBadgeProps,
 } from "antd-mobile";
-import React from "react";
 
 export interface BadgeProps extends AntdBadgeProps {
   /** An optional prop */

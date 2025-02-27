@@ -2,6 +2,7 @@ import {
   FloatingPanel as AntdFloatingPanel,
   type FloatingPanelProps as AntdFloatingPanelProps,
 } from "antd-mobile";
+import React from "react";
 
 export interface FloatingPanelProps extends AntdFloatingPanelProps {
   /** An optional prop */
