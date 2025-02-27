@@ -4,6 +4,7 @@ export * from "./Button";
 export * from "./Space";
 export * from "./Divider";
 export * from "./DatePicker";
+export * from "./Picker";
 export * from "./Input";
 export * from "./List";
 export * from "./Badge";
