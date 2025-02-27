@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 // Libraries
 import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
@@ -61,115 +62,103 @@ const demoImages = [
   "https://images.unsplash.com/photo-1624993590528-4ee743c9896e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=1000&q=80",
 ];
 
-const ImageViewerSingle = (args) => {
-  const [visible, setVisible] = useState(false);
-  return (
-    <>
-      <Button
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        显示图片
-      </Button>
-      <ImageViewer
-        {...args}
-        classNames={{
-          mask: "customize-mask",
-          body: "customize-body",
-        }}
-        image={demoImages[0]}
-        visible={visible}
-        onClose={() => {
-          setVisible(false);
-        }}
-      />
-    </>
-  );
-};
-
 export const Default: Story = {
   args: {},
   render: (args) => {
-    return <ImageViewerSingle {...args} />;
+    const [visible, setVisible] = useState(false);
+    return (
+      <>
+        <Button
+          onClick={() => {
+            setVisible(true);
+          }}
+        >
+          Show Image
+        </Button>
+        <ImageViewer
+          {...args}
+          classNames={{
+            mask: "customize-mask",
+            body: "customize-body",
+          }}
+          image={demoImages[0]}
+          visible={visible}
+          onClose={() => {
+            setVisible(false);
+          }}
+        />
+      </>
+    );
   },
-};
-
-const ImageViewerMulti = (args) => {
-  const [visible, setVisible] = useState(false);
-  return (
-    <>
-      <Button
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        显示图片
-      </Button>
-      <ImageViewer.Multi
-        {...args}
-        images={demoImages}
-        visible={visible}
-        defaultIndex={1}
-        onClose={() => {
-          setVisible(false);
-        }}
-      />
-    </>
-  );
 };
 
 export const MultiImages: Story = {
   args: {},
   render: (args) => {
-    return <ImageViewerMulti {...args} />;
-  },
-};
-
-const ImageViewerWithFooter = (args) => {
-  const [visible, setVisible] = useState(false);
-
-  const renderFooter = (image: string, index: number) => {
+    const [visible, setVisible] = useState(false);
     return (
-      <div className="am-p-16 am-text-center">
-        <div
-          className="am-text-white am-text-[var(--adm-font-size-4)] am-leading-none am-px-4 am-py-2 am-bg-gray-600/40 am-rounded-full am-inline-block am-cursor-pointer"
+      <>
+        <Button
           onClick={() => {
-            console.log("Loading...");
+            setVisible(true);
           }}
         >
-          Page {index + 1}
-        </div>
-      </div>
+          Show Image
+        </Button>
+        <ImageViewer.Multi
+          {...args}
+          images={demoImages}
+          visible={visible}
+          defaultIndex={1}
+          onClose={() => {
+            setVisible(false);
+          }}
+        />
+      </>
     );
-  };
-
-  return (
-    <>
-      <Button
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        显示图片
-      </Button>
-      <ImageViewer.Multi
-        {...args}
-        images={demoImages}
-        visible={visible}
-        defaultIndex={1}
-        onClose={() => {
-          setVisible(false);
-        }}
-        renderFooter={renderFooter}
-      />
-    </>
-  );
+  },
 };
 
 export const WithFooter: Story = {
   args: {},
   render: (args) => {
-    return <ImageViewerWithFooter {...args} />;
+    const [visible, setVisible] = useState(false);
+
+    const renderFooter = (image: string, index: number) => {
+      return (
+        <div className="am-p-16 am-text-center">
+          <div
+            className="am-text-white am-text-[var(--adm-font-size-4)] am-leading-none am-px-4 am-py-2 am-bg-gray-600/40 am-rounded-full am-inline-block am-cursor-pointer"
+            onClick={() => {
+              console.log("Loading...");
+            }}
+          >
+            Page {index + 1}
+          </div>
+        </div>
+      );
+    };
+
+    return (
+      <>
+        <Button
+          onClick={() => {
+            setVisible(true);
+          }}
+        >
+          Show Image
+        </Button>
+        <ImageViewer.Multi
+          {...args}
+          images={demoImages}
+          visible={visible}
+          defaultIndex={1}
+          onClose={() => {
+            setVisible(false);
+          }}
+          renderFooter={renderFooter}
+        />
+      </>
+    );
   },
 };

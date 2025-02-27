@@ -7,7 +7,7 @@ import { Toast } from "../Toast";
 import { Button } from "../Button";
 
 // Icons
-import { RightOutline, AntOutline } from "antd-mobile-icons";
+import { AlignRightIcon, EditIcon } from "lucide-react";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
@@ -65,9 +65,9 @@ export const ComplexCard: Story = {
     };
     return (
       <Card
-        icon={<AntOutline style={{ color: "#1677ff" }} />}
+        icon={<EditIcon style={{ color: "#1677ff" }} />}
         title={<div style={{ fontWeight: "bold" }}>Title</div>}
-        extra={<RightOutline />}
+        extra={<AlignRightIcon />}
         onBodyClick={onBodyClick}
         onHeaderClick={onHeaderClick}
         style={{ borderRadius: "16px" }}

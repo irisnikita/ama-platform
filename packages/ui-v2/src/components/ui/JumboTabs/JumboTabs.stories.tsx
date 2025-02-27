@@ -67,31 +67,3 @@ export const WithActiveKey: Story = {
     );
   },
 };
-
-// export const Clickable: Story = {
-//   args: {},
-//   render: (args) => {
-//     return (
-//       <JumboTabs {...args}>
-//         <JumboTabs.Item
-//           prefix={<JumboTabsIcon />}
-//           onClick={() => alert("Item 1 clicked")}
-//         >
-//           Item 1
-//         </JumboTabs.Item>
-//         <JumboTabs.Item
-//           prefix={<DollarSignIcon />}
-//           onClick={() => alert("Item 2 clicked")}
-//         >
-//           Item 2
-//         </JumboTabs.Item>
-//         <JumboTabs.Item
-//           prefix={<BusIcon />}
-//           onClick={() => alert("Item 3 clicked")}
-//         >
-//           Item 3
-//         </JumboTabs.Item>
-//       </JumboTabs>
-//     );
-//   },
-// };
