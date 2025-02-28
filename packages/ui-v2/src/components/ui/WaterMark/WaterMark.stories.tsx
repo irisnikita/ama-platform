@@ -12,7 +12,7 @@ const meta: Meta<typeof WaterMark> = {
     docs: {
       description: {
         component: `
-A tag component that can be used to display content.`,
+A component that can be used to display a watermark.`,
       },
     },
   },

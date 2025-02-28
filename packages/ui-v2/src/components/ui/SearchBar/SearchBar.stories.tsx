@@ -56,7 +56,7 @@ export const WithAutoFocus: Story = {
   },
 };
 
-export const WithRef: Story = {
+export const UseRef: Story = {
   args: {},
   render: () => {
     const searchRef = useRef<SearchBarRef>(null);

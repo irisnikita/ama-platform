@@ -43,3 +43,11 @@ export * from "./CheckList";
 export * from "./Checkbox";
 export * from "./SearchBar";
 export * from "./Form";
+export * from "./Selector";
+export * from "./Radio";
+export * from "./Rate";
+export * from "./Slider";
+export * from "./Stepper";
+export * from "./Switch";
+export * from "./TextArea";
+
