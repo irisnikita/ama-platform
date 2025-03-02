@@ -51,3 +51,4 @@ export * from "./Stepper";
 export * from "./Switch";
 export * from "./TextArea";
 export * from "./Modal";
+export * from "./ProgressBar";
