@@ -24,6 +24,9 @@ const locale = {
       description: "Hiện tại không có dữ liệu, xin vui lòng thử lại sau.",
     },
   },
+  Modal: {
+    ok: "Đồng ý",
+  },
 };
 
 export const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
