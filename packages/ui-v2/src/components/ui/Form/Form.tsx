@@ -12,6 +12,8 @@ const BaseForm: React.FC<FormProps> = (props) => {
 
 export const Form = BaseForm as React.FC<FormProps> & {
   Item: typeof AntdForm.Item;
+  useForm: typeof AntdForm.useForm;
 };
 
 Form.Item = AntdForm.Item;
+Form.useForm = AntdForm.useForm;
