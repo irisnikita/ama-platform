@@ -19,6 +19,7 @@ import {
   Button as AntdButton,
   type ButtonProps as AntdButtonProps,
 } from "antd-mobile";
+import { SpinLoading } from "../Loading";
 
 export interface ButtonProps extends AntdButtonProps {
   /** An optional icon */
@@ -28,7 +29,19 @@ export interface ButtonProps extends AntdButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { children, icon, iconPosition = "left", ...restOfProps } = props;
+  const {
+    children,
+    icon,
+    loadingIcon = (
+      <SpinLoading
+        color="currentColor"
+        style={{ "--size": "20px" }}
+        className="am-mx-2"
+      />
+    ),
+    iconPosition = "left",
+    ...restOfProps
+  } = props;
 
   const renderButtonContent = useCallback(() => {
     const nodeItems: React.ReactNode[] = [
@@ -47,7 +60,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   }, [children, icon, iconPosition]);
 
   return (
-    <AntdButton {...restOfProps}>
+    <AntdButton {...restOfProps} loadingIcon={loadingIcon}>
       <div className="am-flex am-items-center am-justify-center am-gap-2">
         {renderButtonContent()}
       </div>
