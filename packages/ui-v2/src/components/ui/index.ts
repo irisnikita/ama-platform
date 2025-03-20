@@ -58,3 +58,4 @@ export * from "./Popover";
 export * from "./Popup";
 export * from "./ProgressCircle";
 export * from "./Result";
+export * from "./Skeleton";
