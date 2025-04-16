@@ -15,10 +15,11 @@ const preview: Preview = {
     docs: {
       theme: themes.normal,
       source: {
-        format: 'dedent',
-        language: 'tsx',
+        format: "dedent",
+        language: "tsx",
         transform: (_code: string, storyContext: StoryContext) => {
-          const originalSource = storyContext.parameters?.docs?.source?.originalSource;
+          const originalSource =
+            storyContext.parameters?.docs?.source?.originalSource;
 
           console.log(originalSource);
 
@@ -30,8 +31,9 @@ const preview: Preview = {
 
           const formattedRegex = matchRegex[0].trim();
 
-          return `const App: React.FC = () => {\n${formattedRegex.includes('return') ? '' : '  return'}\n    ${formattedRegex}\n}`;
-
+          return `const App: React.FC = () => {\n${
+            formattedRegex.includes("return") ? "" : "  return"
+          }\n    ${formattedRegex}\n}`;
         },
       },
     },
