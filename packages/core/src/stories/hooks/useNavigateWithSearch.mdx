@@ -1,0 +1,214 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Hooks/useNavigateWithSearch" />
+
+# useNavigateWithSearch
+
+`useNavigateWithSearch` is a custom hook that extends React Router DOM's `useNavigate`, allowing navigation between pages while retaining or manipulating search parameters.
+
+- ✅ Preserves existing search parameters when navigating
+- ✅ Adds or overrides search parameters
+- ✅ Completely removes existing search parameters if needed
+- ✅ Works with both string paths and location objects
+
+## Usage
+
+```tsx
+import { useNavigateWithSearch } from "@antsomi/core";
+
+const MyComponent = () => {
+  const navigateWithSearch = useNavigateWithSearch();
+
+  const handleNavigate = () => {
+    // Navigate to a new page while keeping existing search parameters
+    navigateWithSearch("/new-page");
+
+    // Add or override new parameters while keeping existing ones
+    navigateWithSearch("/new-page", {
+      newParams: { id: "123" },
+    });
+
+    // Navigate without keeping existing parameters
+    navigateWithSearch("/new-page", {
+      keepExistingParams: false,
+      newParams: { key: "value" },
+    });
+  };
+
+  return <button onClick={handleNavigate}>Navigate</button>;
+};
+```
+
+## API
+
+Below is the API of the `useNavigateWithSearch` hook:
+
+### Parameters
+
+The hook does not take any input parameters.
+
+### Returns
+
+```tsx
+(to: To, options?: NavigateWithSearchOptions) => void
+```
+
+- `to`: The destination path or location object to navigate to.
+  - Type: `string | { pathname?: string; search?: string; hash?: string }`
+- `options`: (Optional) Configuration for the navigation.
+  - `keepExistingParams`: (Default: `true`) Determines whether to retain existing search parameters.
+  - `newParams`: New search parameters to add or override.
+
+### Interface
+
+<Source language="typescript" code={`
+interface NavigateWithSearchOptions {
+  /**
+   * Determines whether to keep the existing search params.
+   * @default true
+   */
+  keepExistingParams?: boolean;
+  /**
+   * New search params to add or override.
+   */
+  newParams?: Record<string, string>;
+}
+
+/**
+ * Return type of the \`useNavigateWithSearch\` hook.
+ * A custom navigation function that supports retaining or manipulating search params.
+ */
+type NavigateWithSearch = (to: To, options?: NavigateWithSearchOptions) => void;
+`} />
+
+## Examples
+
+### Basic Usage
+
+Navigate to a new page while keeping existing search parameters:
+
+<Source language="tsx" code={`
+import { useNavigateWithSearch } from '@antsomi/core';
+
+function BasicComponent() {
+  const navigateWithSearch = useNavigateWithSearch();
+  
+  const handleNavigate = () => {
+    // Current URL: /current-page?sort=asc&page=1
+    
+    // Navigate to /products and keep existing URL parameters
+    // Result: /products?sort=asc&page=1
+    navigateWithSearch('/products');
+  };
+  
+  return <button onClick={handleNavigate}>Go to Products</button>;
+}
+`} />
+
+### Adding New Parameters
+
+Navigate and add new search parameters while preserving existing ones:
+
+<Source language="tsx" code={`
+import { useNavigateWithSearch } from '@antsomi/core';
+
+function FilterComponent() {
+  const navigateWithSearch = useNavigateWithSearch();
+  
+  const applyFilter = (filter) => {
+    // Current URL: /products?sort=asc&page=1
+    
+    // Add new filter parameter
+    // Result: /products?sort=asc&page=1&filter=new
+    navigateWithSearch('/products', {
+      newParams: { filter },
+    });
+  };
+  
+  return (
+    <div>
+      <button onClick={() => applyFilter('new')}>New Products</button>
+      <button onClick={() => applyFilter('sale')}>Sale Products</button>
+    </div>
+  );
+}
+`} />
+
+### Replacing Parameters
+
+Replace existing parameters with new ones:
+
+<Source language="tsx" code={`
+import { useNavigateWithSearch } from '@antsomi/core';
+
+function ResetFilters() {
+  const navigateWithSearch = useNavigateWithSearch();
+  
+  const resetAndSetView = () => {
+    // Current URL: /products?sort=asc&page=1&filter=new
+    
+    // Remove all parameters and add new ones
+    // Result: /products?view=grid
+    navigateWithSearch('/products', {
+      keepExistingParams: false,
+      newParams: { view: 'grid' },
+    });
+  };
+  
+  return <button onClick={resetAndSetView}>Reset and Change View</button>;
+}
+`} />
+
+### With Location Object
+
+Use with a location object instead of a string path:
+
+<Source language="tsx" code={`
+import { useNavigateWithSearch } from '@antsomi/core';
+
+function NavigationComponent() {
+  const navigateWithSearch = useNavigateWithSearch();
+  
+  const navigateToSection = () => {
+    // Current URL: /products?category=electronics
+    
+    // Navigate with location object and add new parameter
+    // Result: /products?category=electronics&view=grid#featured
+    navigateWithSearch(
+      {
+        pathname: '/products',
+        hash: '#featured',
+      },
+      {
+        newParams: { view: 'grid' },
+      }
+    );
+  };
+  
+  return <button onClick={navigateToSection}>Featured Products</button>;
+}
+`} />
+
+### Clearing All Parameters
+
+Remove all search parameters:
+
+<Source language="tsx" code={`
+import { useNavigateWithSearch } from '@antsomi/core';
+
+function ClearFilters() {
+  const navigateWithSearch = useNavigateWithSearch();
+  
+  const clearAllParams = () => {
+    // Current URL: /products?sort=asc&page=1&filter=new&view=grid
+    
+    // Clear all search parameters
+    // Result: /products
+    navigateWithSearch('/products', {
+      keepExistingParams: false,
+    });
+  };
+  
+  return <button onClick={clearAllParams}>Clear All Filters</button>;
+}
+`} />

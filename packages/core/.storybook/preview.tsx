@@ -1,39 +1,33 @@
-import React from "react";
-import type { Preview, StoryContext } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
+import React from "react";
+import i18n from "./i18next";
 
 // Css
-import "../src/css/main.scss";
 import "./main.scss";
 
 // Providers
-import { ConfigProvider } from "../src/Providers";
+// import { ConfigProvider } from "../src/Providers";
 
 const preview: Preview = {
+  initialGlobals: {
+    locale: "vi",
+    locales: {
+      en: {
+        icon: "🇺🇸",
+        title: "English",
+        right: "EN",
+      },
+      vi: {
+        icon: "🇻🇳",
+        title: "Tiếng Việt",
+        right: "VN",
+      },
+    },
+  },
   parameters: {
     docs: {
       theme: themes.normal,
-      source: {
-        format: 'dedent',
-        language: 'tsx',
-        transform: (_code: string, storyContext: StoryContext) => {
-          const originalSource = storyContext.parameters?.docs?.source?.originalSource;
-
-          console.log(originalSource);
-
-          const regexDocs =
-            /(?<=\/\* storybook-docs wrapper \*\/)[\s\S]*(?=\/\* storybook-docs wrapper \*\/.*)/m;
-
-          const matchRegex = originalSource.match(regexDocs);
-          if (!matchRegex) return null;
-
-          const formattedRegex = matchRegex[0].trim();
-
-          return `const App: React.FC = () => {\n${formattedRegex.includes('return') ? '' : '  return'}\n    ${formattedRegex}\n}`;
-
-        },
-      },
     },
     controls: {
       matchers: {
@@ -41,20 +35,10 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    viewport: {
-      viewports: INITIAL_VIEWPORTS,
-      defaultViewport: "iphone14pro",
-    },
-    // layout: "centered",
+    i18n,
   },
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <ConfigProvider>
-        <Story />
-      </ConfigProvider>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 };
 
 export default preview;

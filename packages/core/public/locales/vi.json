@@ -1,0 +1,68 @@
+{
+  "hooks": {
+    "useNavigateWithSearch": {
+      "title": "useNavigateWithSearch",
+      "description": "Hook tùy chỉnh mở rộng từ `useNavigate` của React Router DOM, cho phép điều hướng giữa các trang trong khi vẫn giữ lại hoặc thao tác với các tham số tìm kiếm.",
+      "features": {
+        "preserveParams": "Giữ nguyên các tham số tìm kiếm khi chuyển trang",
+        "addParams": "Thêm hoặc ghi đè tham số tìm kiếm",
+        "removeParams": "Hoàn toàn xóa các tham số tìm kiếm hiện tại nếu cần",
+        "worksWith": "Hoạt động với cả đường dẫn chuỗi và đối tượng location"
+      },
+      "sections": {
+        "usage": "Cách sử dụng",
+        "api": "API",
+        "parameters": "Tham số",
+        "returns": "Giá trị trả về",
+        "interface": "Giao diện",
+        "examples": "Ví dụ"
+      },
+      "apiDescription": {
+        "noParams": "Hook không nhận tham số đầu vào nào.",
+        "returnDescription": "Đường dẫn đích hoặc đối tượng location để điều hướng đến.",
+        "options": "Cấu hình cho việc điều hướng.",
+        "keepExistingParams": "Xác định có giữ lại các tham số tìm kiếm hiện tại hay không.",
+        "newParams": "Các tham số tìm kiếm mới để thêm hoặc ghi đè."
+      },
+      "examples": {
+        "basicUsage": {
+          "title": "Sử dụng cơ bản",
+          "description": "Điều hướng đến trang mới và giữ nguyên các tham số tìm kiếm hiện tại:",
+          "currentUrl": "URL hiện tại",
+          "result": "Kết quả"
+        },
+        "addingParams": {
+          "title": "Thêm tham số mới",
+          "description": "Điều hướng và thêm các tham số tìm kiếm mới trong khi giữ nguyên các tham số hiện tại:",
+          "newProducts": "Sản phẩm mới",
+          "saleProducts": "Sản phẩm giảm giá"
+        },
+        "replacingParams": {
+          "title": "Thay thế tham số",
+          "description": "Thay thế các tham số hiện tại với các tham số mới:",
+          "resetAndChange": "Đặt lại và Đổi giao diện"
+        },
+        "withLocationObject": {
+          "title": "Với đối tượng Location",
+          "description": "Sử dụng với đối tượng location thay vì đường dẫn chuỗi:",
+          "featuredProducts": "Sản phẩm nổi bật"
+        },
+        "clearingParams": {
+          "title": "Xóa tất cả tham số",
+          "description": "Xóa tất cả các tham số tìm kiếm:",
+          "clearAll": "Xóa tất cả bộ lọc"
+        }
+      },
+      "codeComments": {
+        "navigate": "Điều hướng đến trang mới và giữ nguyên các tham số tìm kiếm hiện tại",
+        "addOverride": "Thêm hoặc ghi đè tham số mới, giữ nguyên các tham số khác",
+        "withoutKeeping": "Điều hướng mà không giữ các tham số hiện tại",
+        "keepExisting": "Điều hướng đến /products và giữ nguyên tham số URL",
+        "addNew": "Thêm tham số filter mới",
+        "removeAll": "Xóa tất cả tham số và thêm tham số mới",
+        "navigateWithLocation": "Điều hướng với đối tượng location và thêm tham số mới",
+        "clearAll": "Xóa tất cả các tham số tìm kiếm"
+      }
+    }
+  }
+}

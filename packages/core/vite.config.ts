@@ -24,57 +24,16 @@ export default defineConfig({
       ],
       include: ["src/**/*"],
     }),
-    visualizer({
-      gzipSize: true,
-      brotliSize: true,
-      open: false,
-      filename: "stats.html",
-    }),
+    // visualizer({
+    //   gzipSize: true,
+    //   brotliSize: true,
+    //   open: false,
+    //   filename: "stats.html",
+    // }),
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  build: {
-    lib: {
-      entry: "src/index.ts",
-      name: "antsomi-zma-ui",
-      formats: ["es", "umd"],
-      fileName: (format) =>
-        `antsomi-zma-ui.${format}${format === "umd" ? ".prod" : ""}.js`,
-    },
-    sourcemap: true,
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        pure_funcs: ["console.info", "console.debug"],
-      },
-      format: {
-        comments: false,
-      },
-    },
-    rollupOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
-      },
-      treeshake: {
-        preset: "recommended",
-        moduleSideEffects: false,
-      },
-      plugins: [
-        terser({
-          format: {
-            preamble: "/* antsomi-zma-ui v1.0.0 */",
-          },
-        }),
-      ],
-    },
-    chunkSizeWarningLimit: 1000,
   },
 });

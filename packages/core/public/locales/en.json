@@ -1,0 +1,68 @@
+{
+  "hooks": {
+    "useNavigateWithSearch": {
+      "title": "useNavigateWithSearch",
+      "description": "A custom hook that extends React Router DOM's `useNavigate`, allowing navigation between pages while retaining or manipulating search parameters.",
+      "features": {
+        "preserveParams": "Preserves existing search parameters when navigating",
+        "addParams": "Adds or overrides search parameters",
+        "removeParams": "Completely removes existing search parameters if needed",
+        "worksWith": "Works with both string paths and location objects"
+      },
+      "sections": {
+        "usage": "Usage",
+        "api": "API",
+        "parameters": "Parameters",
+        "returns": "Returns",
+        "interface": "Interface",
+        "examples": "Examples"
+      },
+      "apiDescription": {
+        "noParams": "The hook does not take any input parameters.",
+        "returnDescription": "The destination path or location object to navigate to.",
+        "options": "Configuration for the navigation.",
+        "keepExistingParams": "Determines whether to retain existing search parameters.",
+        "newParams": "New search parameters to add or override."
+      },
+      "examples": {
+        "basicUsage": {
+          "title": "Basic Usage",
+          "description": "Navigate to a new page while keeping existing search parameters:",
+          "currentUrl": "Current URL",
+          "result": "Result"
+        },
+        "addingParams": {
+          "title": "Adding New Parameters",
+          "description": "Navigate and add new search parameters while preserving existing ones:",
+          "newProducts": "New Products",
+          "saleProducts": "Sale Products"
+        },
+        "replacingParams": {
+          "title": "Replacing Parameters",
+          "description": "Replace existing parameters with new ones:",
+          "resetAndChange": "Reset and Change View"
+        },
+        "withLocationObject": {
+          "title": "With Location Object",
+          "description": "Use with a location object instead of a string path:",
+          "featuredProducts": "Featured Products"
+        },
+        "clearingParams": {
+          "title": "Clearing All Parameters",
+          "description": "Remove all search parameters:",
+          "clearAll": "Clear All Filters"
+        }
+      },
+      "codeComments": {
+        "navigate": "Navigate to a new page while keeping existing search parameters",
+        "addOverride": "Add or override new parameters while keeping existing ones",
+        "withoutKeeping": "Navigate without keeping existing parameters",
+        "keepExisting": "Navigate to /products and keep existing URL parameters",
+        "addNew": "Add new filter parameter",
+        "removeAll": "Remove all parameters and add new ones",
+        "navigateWithLocation": "Navigate with location object and add new parameter",
+        "clearAll": "Clear all search parameters"
+      }
+    }
+  }
+}
