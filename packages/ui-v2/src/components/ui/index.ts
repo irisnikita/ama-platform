@@ -57,5 +57,6 @@ export * from "./Mask";
 export * from "./Popover";
 export * from "./Popup";
 export * from "./ProgressCircle";
+export * from "./PasscodeInput";
 export * from "./Result";
 export * from "./Skeleton";
