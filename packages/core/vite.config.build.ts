@@ -59,7 +59,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["react", "react-dom", "react-router-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",

@@ -1,6 +1,6 @@
 {
   "name": "@antscorp/ama-sdk",
-  "version": "0.0.40",
+  "version": "0.0.42",
   "main": "dist/ama-sdk.es.js",
   "module": "dist/ama-sdk.es.js",
   "types": "dist/index.d.ts",
@@ -77,7 +77,8 @@
   },
   "peerDependencies": {
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "react-router-dom": ">= 5.1.0"
   },
   "eslintConfig": {
     "extends": [
