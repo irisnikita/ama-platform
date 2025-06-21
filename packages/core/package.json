@@ -23,7 +23,8 @@
   "dependencies": {
     "i18next-http-backend": "^3.0.2",
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "zmp-sdk": "^2.46.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
