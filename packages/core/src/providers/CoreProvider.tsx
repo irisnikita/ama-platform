@@ -16,5 +16,5 @@ export const CoreProvider: React.FC<CoreProviderProps> = (props) => {
 
   useReceivePostMessage();
 
-  return <>{children}</>;
+  return children;
 };

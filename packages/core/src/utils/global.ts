@@ -3,7 +3,7 @@
  * Includes navigation and native storage operations, intended for external script usage.
  */
 
-import { nativeStorage } from "zmp-sdk/apis";
+import { nativeStorage } from "zmp-sdk";
 import { MESSAGE_TYPE } from "@/constants";
 
 /**
